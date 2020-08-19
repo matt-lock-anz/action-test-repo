@@ -5,4 +5,8 @@ mergeable:
       - do: label
         must_exclude:
           regex: 'wip'
-          message: 'PR not ready to be merged!'
+    fail:
+      - do: comment
+          payload:
+            body: >
+              PRs with a wip label cannot be merged
