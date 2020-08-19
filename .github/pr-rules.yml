@@ -7,6 +7,6 @@ mergeable:
           regex: 'wip'
     fail:
       - do: comment
-          payload:
-            body: >
-              PRs with a wip label cannot be merged
+        payload:
+          body: >
+            PRs with a wip label cannot be merged
