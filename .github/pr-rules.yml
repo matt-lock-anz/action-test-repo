@@ -5,8 +5,16 @@ mergeable:
       - do: label
         must_exclude:
           regex: 'wip'
+          message: 'PRs with wip label cannot be merged'
+      - do: milestone
+        no_empty:
+          enabled: true
+          message: 'PRs must be associated to a milestone'
+      - do: project
+        must_include:
+          regex: '.*'
+          message: 'PRs must be associated to a project'          
     fail:
-      - do: comment
-        payload:
-          body: >
-            PRs with a wip label cannot be merged
+      - do: results_as_review
+    pass:
+      - do: results_as_review
