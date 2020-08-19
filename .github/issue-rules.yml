@@ -3,8 +3,17 @@ mergeable:
   - when: issues.*
     validate:
       - do: label
-        must_include:
-          regex: 'feature|bug'
+        and:
+          - must_include:
+            regex: 'bug'
+            message: 'Issues must be labelled with type of story, bug, or tech'
+          - must_include:
+            regex: 'p1|p2|p3|p4|p5'
+            message: 'Bugs must have a priority rating of p1,p2,p3,p4, or p5'
+        or:
+          - must_include:
+            regex: 'story|tech'
+            message: 'Issues must be labelled with type of story, bug, or tech'            
     fail:
       - do: labels
-        labels: [ 'Missing Type Label' ]
+        labels: [ 'missing meta data' ]
