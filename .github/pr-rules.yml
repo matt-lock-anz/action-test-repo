@@ -9,11 +9,7 @@ mergeable:
       - do: milestone
         no_empty:
           enabled: true
-          message: 'PRs must be associated to a milestone'
-      - do: project
-        no_empty:
-          enabled: true
-          message: 'PRs must be associated to a project'          
+          message: 'PRs must be associated to a milestone'    
     fail:
       - do: results_as_review
     pass:
