@@ -15,6 +15,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Check PRs
-        uses: mattlock83/mergeable-github-action-example@v0.3
+        uses: mattlock83/mergeable-github-action-example@v0.4
         with:
           config_file: 'pr-rules.yml'
