@@ -1,2 +1,2 @@
 # action-test-repo
-Testing out Github Actions
+Testing out Github Actions.
